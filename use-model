@@ -1,0 +1,22 @@
+from pyspark import SparkContext
+from pyspark.mllib.clustering import KMeans, KMeansModel
+from numpy import array
+
+sc = SparkContext()
+
+#Generate Kmeans
+model = KMeansModel.load(sc, "savedModelDir")
+
+#Print out the cluster of each data point
+print (model.predict(array([185, 71])))
+print (model.predict(array([170, 56])))
+print (model.predict(array([168, 60])))
+print (model.predict(array([179, 68])))
+print (model.predict(array([182, 72])))
+print (model.predict(array([188, 77])))
+print (model.predict(array([180, 71])))
+print (model.predict(array([180, 70])))
+print (model.predict(array([183, 84])))
+print (model.predict(array([180, 88])))
+print (model.predict(array([180, 67])))
+print (model.predict(array([177, 76])))
